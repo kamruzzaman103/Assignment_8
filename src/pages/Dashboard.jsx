@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { CartContext, WishlistContext } from '../context/AppContext';
 import { useNavigate } from 'react-router-dom';
+import { FaArrowDownWideShort } from "react-icons/fa6";
 import { toast } from 'react-toastify';
 
 const Dashboard = () => {
@@ -35,39 +36,45 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className=" bg-gray-50">
       <header className="bg-purple-700 text-white py-8 text-center">
         <h1 className="text-3xl font-bold">Dashboard</h1>
-        <p className="mt-2">Explore the latest gadgets that will take your experience to the next level.</p>
-      </header>
-      
-      <div className="container mx-auto py-6">
-        <div className="flex justify-center space-x-4 mb-8">
+        <p className="mt-2">Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!.</p>
+        <div className="flex justify-center space-x-4 my-2">
           <button
-            className={`px-6 py-2 font-semibold rounded-full ${isCartTab ? 'bg-purple-700 text-white' : 'bg-gray-200'}`}
+            className={`px-6 py-1 font-semibold border-[1px] border-white rounded-full ${isCartTab ? 'bg-white text-purple-700' : 'bg-purple-700'}`}
             onClick={() => setIsCartTab(true)}
           >
             Cart
           </button>
           <button
-            className={`px-6 py-2 font-semibold rounded-full ${!isCartTab ? 'bg-purple-700 text-white' : 'bg-gray-200'}`}
+            className={`px-6 py-1 font-semibold border-[1px] border-white rounded-full ${!isCartTab ? 'bg-white text-purple-700' : 'bg-purple-700'}`}
             onClick={() => setIsCartTab(false)}
           >
             Wishlist
           </button>
         </div>
+      </header>
+      
+      <div className="container mx-auto py-6">
+        
 
         {isCartTab ? (
           <div className="bg-white p-6 rounded-lg shadow-md">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-2xl font-bold">Cart</h2>
+              
+              <div className="flex space-x-2 items-center">
               <span className="text-xl font-semibold">Total cost: ${totalCost.toFixed(2)}</span>
-              <div className="flex space-x-2">
                 <button
                   onClick={handleSortByPrice}
-                  className="bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300"
+                  className="bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300 "
+                  
                 >
-                  Sort by Price
+                  <div className='flex items-center '>
+                  <h1 className='mr-1'>Sort by Price</h1> <FaArrowDownWideShort />
+                  </div>
+                  
                 </button>
                 <button
                   onClick={handlePurchase}
@@ -84,12 +91,12 @@ const Dashboard = () => {
             ) : (
               <div className="space-y-4">
                 {cartItems.map((item) => (
-                  <div key={item.id} className="flex items-center bg-gray-100 p-4 rounded-lg shadow-sm">
-                    <img src={item.image} alt={item.name} className="w-16 h-16 object-cover rounded-md mr-4" />
+                  <div key={item.id} className="flex items-center bg-gray-100 p-2 rounded-lg shadow-sm">
+                    <img src={item.product_image} alt={item.name} className="w-20 h-16 object-cover rounded-md mr-4" />
                     <div className="flex-1">
-                      <h3 className="text-lg font-bold">{item.name}</h3>
-                      <p className="text-gray-600">{item.description}</p>
-                      <p className="text-gray-800 font-semibold mt-1">Price: ${item.price.toFixed(2)}</p>
+                      <h3 className="text-sm font-bold">{item.product_title}</h3>
+                      <p className="text-gray-600 text-[10px]">{item.description}</p>
+                      <p className="text-gray-800 text-[13px] font-semibold mt-1">Price: ${item.price.toFixed(2)}</p>
                     </div>
                     <button
                       onClick={() => removeFromCart(item.id)}
@@ -148,12 +155,7 @@ const Dashboard = () => {
           </div>
         </div>
       )}
-      
-      <footer className="bg-gray-100 text-center py-6 mt-12">
-        <p className="text-gray-600">Gadget Heaven - Leading the way in cutting-edge technology and innovation.</p>
-      </footer>
     </div>
   );
 };
-
 export default Dashboard;
