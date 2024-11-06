@@ -8,6 +8,8 @@ const Dashboard = () => {
   const { wishlistItems, removeFromWishlist } = useContext(WishlistContext);
   const [isCartTab, setIsCartTab] = useState(true);
   const [sorted, setSorted] = useState(false);
+  const [showPaymentSuccess, setShowPaymentSuccess] = useState(false);
+  const [finalTotalCost, setFinalTotalCost] = useState(0); // New state to store final total cost
   const navigate = useNavigate();
 
   const totalCost = cartItems.reduce((total, item) => total + item.price, 0);
@@ -22,9 +24,14 @@ const Dashboard = () => {
       toast.info('Your cart is empty!');
       return;
     }
-    toast.success('Congratulations on your purchase!');
-    clearCart();
-    setTimeout(() => navigate('/'), 2000); // Redirect to Home page
+    setFinalTotalCost(totalCost); // Capture total cost before clearing the cart
+    setShowPaymentSuccess(true);  // Show modal
+    clearCart();                  // Clear cart after setting final total cost
+  };
+
+  const closeModal = () => {
+    setShowPaymentSuccess(false);
+    navigate('/'); // Redirect to Home page after closing modal
   };
 
   return (
@@ -123,6 +130,24 @@ const Dashboard = () => {
           </div>
         )}
       </div>
+
+      {/* Payment Success Modal */}
+      {showPaymentSuccess && (
+        <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg text-center max-w-sm w-full">
+            <div className="text-4xl text-green-500 mb-4">✔️</div>
+            <h2 className="text-2xl font-bold">Payment Successfully</h2>
+            <p className="mt-2 text-gray-700">Thanks for purchasing.</p>
+            <p className="font-semibold mt-1">Total: ${finalTotalCost.toFixed(2)}</p>
+            <button
+              onClick={closeModal}
+              className="bg-purple-700 text-white px-4 py-2 mt-6 rounded hover:bg-purple-800"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
       
       <footer className="bg-gray-100 text-center py-6 mt-12">
         <p className="text-gray-600">Gadget Heaven - Leading the way in cutting-edge technology and innovation.</p>
@@ -132,4 +157,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-

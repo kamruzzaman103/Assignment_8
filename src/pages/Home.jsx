@@ -26,7 +26,7 @@ const Home = () => {
   };
 
   return (
-    <div className="p-6">
+    <div className="p-6 -mt-6 mx-16">
       <Banner />
       <div className="flex mt-6">
         <CategoriesSidebar 
