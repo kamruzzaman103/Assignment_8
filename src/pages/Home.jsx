@@ -27,10 +27,13 @@ const Home = () => {
 
   return (
     <div className="p-6 -mt-6 mx-16">
+      
       <Banner />
+      <div className='text-center text-2xl font-bold mt-36'>Explore Cutting-Edge Gadgets</div>
       <div className="flex mt-6">
+        
         <CategoriesSidebar 
-          categories={['All Products', 'Laptops', 'Phones', 'Smart Watches']}
+          categories={['All Products', 'Laptops', 'Phones', 'Watches']}
           selectedCategory={selectedCategory}
           onSelectCategory={handleCategoryChange}
         />

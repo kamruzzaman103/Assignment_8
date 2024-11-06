@@ -19,7 +19,7 @@
   {
     "product_id": 2,
     "product_title": "Dell XPS 13",
-    "product_image": "https://example.com/images/dell_xps_13.jpg",
+    "product_image": "https://i.ibb.co.com/4m7HFVQ/9320plusoled.jpg",
     "category": "Laptops",
     "price": 1199.99,
     "description": "The Dell XPS 13 is a high-performance laptop with an immersive display and premium build quality.",
@@ -36,7 +36,7 @@
   {
     "product_id": 3,
     "product_title": "HP Spectre x360",
-    "product_image": "https://example.com/images/hp_spectre_x360.jpg",
+    "product_image": "https://i.ibb.co.com/ZzV85c0/HP-Spectre-16-F1013-DX-in-BD.jpg",
     "category": "Laptops",
     "price": 1099.99,
     "description": "HP Spectre x360 is a 2-in-1 laptop with stunning design and powerful performance.",
@@ -52,8 +52,59 @@
   },
   {
     "product_id": 4,
+    "product_title": "Lenovo ThinkPad X1 Carbon",
+    "product_image": "https://i.ibb.co.com/2Pc1pjb/lenovo-laptops-x1-carbon-6th-gen-hero.webp",
+    "category": "Laptops",
+    "price": 1399.99,
+    "description": "Lenovo's ThinkPad X1 Carbon is a reliable and powerful laptop for business professionals.",
+    "Specification": [
+      "Intel Core i7",
+      "14-inch FHD Display",
+      "16GB RAM",
+      "512GB SSD"
+    ],
+    "availability": true,
+    "rating": 4.7,
+    "weight": "2.4 lbs"
+  },
+  {
+    "product_id": 5,
+    "product_title": "Apple MacBook Pro 16",
+    "product_image": "https://i.ibb.co.com/XbcprQX/post-Apple-Mac-Book-Pro-2016-15inch-a.jpg",
+    "category": "Laptops",
+    "price": 2499.99,
+    "description": "Apple MacBook Pro 16 is a powerhouse designed for professionals needing performance and reliability.",
+    "Specification": [
+      "Apple M1 Pro Chip",
+      "16-inch Retina Display",
+      "16GB RAM",
+      "512GB SSD"
+    ],
+    "availability": true,
+    "rating": 4.9,
+    "battery_life": "Up to 21 hours"
+  },
+  {
+    "product_id": 6,
+    "product_title": "Acer Aspire 5",
+    "product_image": "https://i.ibb.co.com/CKXxVsR/Acer-ASPIRE-8.jpg",
+    "category": "Laptops",
+    "price": 599.99,
+    "description": "Acer Aspire 5 offers a balance of performance and affordability with a powerful processor.",
+    "Specification": [
+      "Intel Core i5",
+      "15.6-inch Full HD Display",
+      "8GB RAM",
+      "512GB SSD"
+    ],
+    "availability": true,
+    "rating": 4.3,
+    "battery_life": "Up to 9 hours"
+  },
+  {
+    "product_id": 7,
     "product_title": "iPhone 13",
-    "product_image": "https://example.com/images/iphone_13.jpg",
+    "product_image": "https://i.ibb.co.com/pnqtk1n/3408-34138.jpg",
     "category": "Phones",
     "price": 799.99,
     "description": "The latest iPhone 13 features an improved camera, faster performance, and longer battery life.",
@@ -67,9 +118,9 @@
     "color": "Blue"
   },
   {
-    "product_id": 5,
+    "product_id": 8,
     "product_title": "Samsung Galaxy S21",
-    "product_image": "https://example.com/images/galaxy_s21.jpg",
+    "product_image": "https://i.ibb.co.com/cr0tBNq/images.jpg",
     "category": "Phones",
     "price": 699.99,
     "description": "Samsung Galaxy S21 is a flagship phone with excellent camera capabilities and sleek design.",
@@ -83,9 +134,9 @@
     "5G_support": true
   },
   {
-    "product_id": 6,
+    "product_id": 9,
     "product_title": "Google Pixel 6",
-    "product_image": "https://example.com/images/pixel_6.jpg",
+    "product_image": "https://i.ibb.co.com/vmNxPnv/b-1-500x500.jpg",
     "category": "Phones",
     "price": 599.99,
     "description": "The Google Pixel 6 features the new Google Tensor chip and excellent camera quality.",
@@ -99,100 +150,54 @@
     "battery_capacity": "4614mAh"
   },
   {
-    "product_id": 7,
-    "product_title": "AirPods Pro",
-    "product_image": "https://example.com/images/airpods_pro.jpg",
-    "category": "Accessories",
-    "price": 249.99,
-    "description": "Apple's AirPods Pro offers active noise cancellation and immersive sound.",
+    "product_id": 10,
+    "product_title": "Apple Watch Series 7",
+    "product_image": "https://i.ibb.co.com/qmjMhdt/images-2.jpg",
+    "category": "Watches",
+    "price": 399.99,
+    "description": "The Apple Watch Series 7 is packed with health features, including a blood oxygen monitor, and a larger display.",
     "Specification": [
-      "Active Noise Cancellation",
-      "Transparency mode",
-      "Sweat and water-resistant"
+      "Always-On Retina Display",
+      "Blood Oxygen Monitoring",
+      "Fall Detection",
+      "Water Resistant up to 50m"
     ],
     "availability": true,
     "rating": 4.8,
-    "compatible_devices": "iOS and Android"
-  },
-  {
-    "product_id": 8,
-    "product_title": "Samsung Galaxy Buds Pro",
-    "product_image": "https://example.com/images/galaxy_buds_pro.jpg",
-    "category": "Accessories",
-    "price": 199.99,
-    "description": "Samsung Galaxy Buds Pro offers superior sound quality and noise cancellation.",
-    "Specification": [
-      "Active Noise Cancellation",
-      "IPX7 water resistance",
-      "Wireless charging case"
-    ],
-    "availability": true,
-    "rating": 4.7,
-    "battery_life": "Up to 28 hours with case"
-  },
-  {
-    "product_id": 9,
-    "product_title": "Anker PowerCore 10000",
-    "product_image": "https://example.com/images/anker_powercore_10000.jpg",
-    "category": "Accessories",
-    "price": 24.99,
-    "description": "Compact and lightweight, this power bank charges your devices quickly and efficiently.",
-    "Specification": [
-      "10,000mAh capacity",
-      "Fast charging",
-      "Portable and compact design"
-    ],
-    "availability": true,
-    "rating": 4.6,
-    "output_ports": "USB-A"
-  },
-  {
-    "product_id": 10,
-    "product_title": "OnePlus 9",
-    "product_image": "https://example.com/images/oneplus_9.jpg",
-    "category": "Phones",
-    "price": 729.99,
-    "description": "OnePlus 9 offers a smooth performance with its fast refresh rate and high-quality camera.",
-    "Specification": [
-      "Snapdragon 888",
-      "6.55-inch Fluid AMOLED",
-      "128GB storage"
-    ],
-    "availability": true,
-    "rating": 4.7,
-    "refresh_rate": "120Hz"
+    "battery_life": "Up to 18 hours"
   },
   {
     "product_id": 11,
-    "product_title": "Lenovo ThinkPad X1 Carbon",
-    "product_image": "https://example.com/images/thinkpad_x1.jpg",
-    "category": "Laptops",
-    "price": 1399.99,
-    "description": "Lenovo's ThinkPad X1 Carbon is a reliable and powerful laptop for business professionals.",
+    "product_title": "Samsung Galaxy Watch 4",
+    "product_image": "https://i.ibb.co.com/g6rHr2X/galaxy-watch4-silver.jpg",
+    "category": "Watches",
+    "price": 249.99,
+    "description": "The Samsung Galaxy Watch 4 offers advanced fitness tracking and seamless integration with Android devices.",
     "Specification": [
-      "Intel Core i7",
-      "14-inch FHD Display",
-      "16GB RAM",
-      "512GB SSD"
+      "Super AMOLED Display",
+      "Body Composition Measurement",
+      "Wear OS Powered",
+      "Water Resistant"
     ],
-    "availability": false,
+    "availability": true,
     "rating": 4.7,
-    "weight": "2.4 lbs"
+    "battery_life": "Up to 40 hours"
   },
   {
     "product_id": 12,
-    "product_title": "Logitech MX Master 3",
-    "product_image": "https://example.com/images/mx_master_3.jpg",
-    "category": "Accessories",
-    "price": 99.99,
-    "description": "Logitech's MX Master 3 is an advanced wireless mouse with ergonomic design and customizable buttons.",
+    "product_title": "Fitbit Sense",
+    "product_image": "https://i.ibb.co.com/mFwXJsH/Fitbit-Sense-Advanced-Smartwatch.jpg",
+    "category": "Watches",
+    "price": 299.99,
+    "description": "Fitbit Sense is a health smartwatch with built-in GPS, heart rate monitoring, and stress management tools.",
     "Specification": [
-      "Ergonomic design",
-      "Customizable buttons",
-      "Wireless connection"
+      "Built-in GPS",
+      "Heart Rate Monitoring",
+      "Stress Management",
+      "Water Resistant"
     ],
     "availability": true,
-    "rating": 4.9,
-    "battery_life": "Up to 70 days on a full charge"
+    "rating": 4.5,
+    "battery_life": "Up to 6 days"
   }
 ]

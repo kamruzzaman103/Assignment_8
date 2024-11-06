@@ -7,7 +7,7 @@ const CategoriesSidebar = ({ categories, selectedCategory, onSelectCategory }) =
       {categories.map((category) => (
         <button
           key={category}
-          className={`block w-full text-left px-3 py-2 rounded mb-2 ${
+          className={`block w-full text-sm font-bold px-3 py-2 rounded-full text-left mb-2 ${
             selectedCategory === category ? 'bg-purple-500 text-white' : 'bg-white text-gray-800'
           }`}
           onClick={() => onSelectCategory(category)}
