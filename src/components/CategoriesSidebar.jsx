@@ -2,7 +2,7 @@ import React from 'react';
 
 const CategoriesSidebar = ({ categories, selectedCategory, onSelectCategory }) => {
   return (
-    <div className="w-1/4 bg-gray-100 p-4 rounded-md">
+    <div className="w-52 sm:w-1/4 bg-gray-100 p-4 rounded-md">
       <h2 className="font-bold text-lg mb-4">Categories</h2>
       {categories.map((category) => (
         <button

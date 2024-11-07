@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { AppProvider } from './context/AppContext';
 // import { BrowserRouter as Router } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+import { HelmetProvider } from 'react-helmet-async';
 
 const rootElement = document.getElementById('root');
 const root = ReactDOM.createRoot(rootElement);
@@ -13,10 +14,10 @@ root.render(
   
   <React.StrictMode>
     <AppProvider>
-      
+    <HelmetProvider>
         <App />
         <ToastContainer />
-      
+        </HelmetProvider>,
     </AppProvider>
   </React.StrictMode>
 );

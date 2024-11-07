@@ -14,7 +14,7 @@ export const AppProvider = ({ children }) => {
 
   // Remove item from cart by ID
   const removeFromCart = (id) => {
-    setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
+    setCartItems((prevItems) => prevItems.filter((item) => item.product_id !== id));
   };
 
   // Clear all items from cart
@@ -32,7 +32,7 @@ export const AppProvider = ({ children }) => {
 
   // Remove item from wishlist by ID
   const removeFromWishlist = (id) => {
-    setWishlistItems((prevItems) => prevItems.filter((item) => item.id !== id));
+    setWishlistItems((prevItems) => prevItems.filter((item) => item.product_id !== id));
   };
 
   return (

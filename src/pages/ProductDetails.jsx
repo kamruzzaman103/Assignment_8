@@ -3,12 +3,14 @@ import { useParams } from 'react-router-dom';
 import { CartContext, WishlistContext } from '../context/AppContext';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet-async';
+import { MdOutlineShoppingCart } from "react-icons/md";
+import { GiSelfLove } from "react-icons/gi";
 
 const ProductDetails = () => {
   const { id } = useParams();
   const { addToCart } = useContext(CartContext);
   const { addToWishlist, wishlistItems } = useContext(WishlistContext);
-
   const [product, setProduct] = useState(null);
   const [isInWishlist, setIsInWishlist] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -18,7 +20,7 @@ const ProductDetails = () => {
       .then((response) => response.json())
       .then((data) => {
         const productData = data.find((item) => item.product_id === parseInt(id));
-        
+
         if (productData) {
           setProduct(productData);
           setIsInWishlist(wishlistItems.some((item) => item.product_id === productData.product_id));
@@ -64,14 +66,17 @@ const ProductDetails = () => {
 
   return (
     <div className="relative mb-40">
-      <div className='bg-purple-600  text-center text-white pt-4'>
-        <h1 className='text-3xl font-extrabold'>Product Details</h1>
-        <p className='max-w-[500px] text-sm m-auto pb-44'>Explore the latest gadgets that will take your experience to the next level. 
+      <Helmet>
+        <title>{`Gadget Heaven | ${product.product_title}`}</title>
+      </Helmet>
+      <div className='bg-purple-600  text-center text-white pt-6'>
+        <h1 className='text-3xl font-extrabold mb-2'>Product Details</h1>
+        <p className='max-w-[550px] text-[12px] m-auto pb-40'>Explore the latest gadgets that will take your experience to the next level.
           From smart devices to the coolest accessories, we have it all!</p>
       </div>
 
       <div className="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-lg
-       p-4 max-w-[580px] m-auto absolute left-1/2 transform -translate-x-1/2 -mt-28">
+       p-4 max-w-[580px] m-auto absolute left-1/2 transform -translate-x-1/2 -mt-32">
         <div className="h-60 w-full md:w-1/3 border-2 border-solid rounded-lg">
           <img
             src={product.product_image}
@@ -83,9 +88,8 @@ const ProductDetails = () => {
           <h1 className="text-[16px] font-extrabold text-purple-700">{product.product_title}</h1>
           <p className="text-[12px] text-gray-700 font-bold ">${product.price}</p>
           <span
-            className={`inline-block px-2 py-[2px] rounded-full text-[10px] font-semibold ${
-              product.availability ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
-            }`}
+            className={`inline-block px-2 py-[2px] rounded-full text-[10px] font-semibold ${product.availability ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+              }`}
           >
             {product.availability ? 'In Stock' : 'Out of Stock'}
           </span>
@@ -100,7 +104,7 @@ const ProductDetails = () => {
             </ul>
           </div>
 
-          <div className="mt-2 flex items-center">
+          <div className="mt-1 flex items-center">
             <span className="text-[12px] font-bold">Rating:</span>
             <div className="text-[12px] flex items-center ml-2">
               {renderStars(product.rating)}
@@ -111,18 +115,29 @@ const ProductDetails = () => {
           <div className="mt-1 flex space-x-4">
             <button
               onClick={handleAddToCart}
-              className="bg-purple-500 text-white font-semibold text-[12px] px-4 py-1 rounded hover:bg-purple-600"
+              className="bg-purple-500 text-white font-semibold text-[12px] px-4  rounded-full hover:bg-purple-600"
             >
-              Add to Cart 🛒
+              <div className='flex items-center gap-1'>
+                <h1>Add to Cart</h1>
+                <MdOutlineShoppingCart size={16} />
+              </div>
+               
             </button>
             <button
               onClick={handleAddToWishlist}
-              className={`font-semibold px-4 py-1 text-[12px] rounded border ${
-                isInWishlist ? 'text-gray-400 border-gray-400' : 'text-purple-500 border-purple-500'
-              }`}
+              className={`font-semibold p-[5px] text-[12px] rounded-full border  ${isInWishlist ? 'text-gray-400 border-gray-400' : 'text-purple-500 border-purple-500'
+                }`}
               disabled={isInWishlist}
             >
-              {isInWishlist ? 'Added to Wishlist ♥' : 'Add to Wishlist ♥'}
+              {isInWishlist ? (
+                <>
+                  <GiSelfLove size={16} />
+                </>
+              ) : (
+                <>
+                  <GiSelfLove size={16} />
+                </>
+              )}
             </button>
           </div>
         </div>
